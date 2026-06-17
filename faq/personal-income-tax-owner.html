@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>股利所得稅申報新制：合併申報8.5%抵減與分開計稅28%比較｜亞信．鄭詩瀚會計事務所</title>
+  <meta name="description" content="股東領取公司盈餘分紅會被剝兩層皮嗎？本篇解析台灣股利所得稅申報雙軌制，試算中低所得者如何利用8.5%抵減額產生退稅，高所得者如何運用28%分離課稅節稅。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  
+  <style>
+    .faq-breadcrumbs {
+      background-color: #f1f5f9;
+      padding: 12px 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-color);
+      margin-top: 80px;
+    }
+    .faq-breadcrumbs a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+    .faq-breadcrumbs a:hover {
+      color: var(--primary);
+    }
+    .faq-breadcrumbs span.divider {
+      margin: 0 8px;
+      color: #94a3b8;
+    }
+    .faq-breadcrumbs span.current-item {
+      color: var(--secondary);
+      font-weight: 500;
+    }
+    
+    .faq-detail-container {
+      max-width: 800px;
+      margin: 60px auto 100px auto;
+      padding: 0 24px;
+    }
+    
+    .faq-detail-card {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 50px;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .faq-detail-category {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      background-color: var(--primary-light);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+    
+    .faq-q-block {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 24px;
+    }
+    
+    .faq-q-icon {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1;
+      margin-top: -4px;
+    }
+    
+    .faq-q-block h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--secondary);
+      line-height: 1.4;
+    }
+    
+    .faq-a-block {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      line-height: 1.8;
+      color: var(--text-main);
+      font-size: 1.05rem;
+    }
+    
+    .faq-a-icon {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--secondary);
+      line-height: 1;
+      margin-top: -4px;
+    }
+    
+    .faq-a-content {
+      flex-grow: 1;
+    }
+    .faq-a-content p {
+      margin-bottom: 18px;
+    }
+    .faq-a-content p:last-child {
+      margin-bottom: 0;
+    }
+    .faq-a-content ul, .faq-a-content ol {
+      margin: 10px 0 20px 20px;
+    }
+    .faq-a-content li {
+      margin-bottom: 10px;
+    }
+    
+    .faq-detail-footer {
+      border-top: 1px solid var(--border-color);
+      margin-top: 50px;
+      padding-top: 40px;
+      text-align: center;
+    }
+    .faq-detail-footer p {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+    .faq-detail-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+    
+    @media (max-width: 600px) {
+      .faq-detail-card {
+        padding: 30px 20px;
+      }
+      .faq-q-block h1 {
+        font-size: 1.3rem;
+      }
+      .faq-a-block {
+        font-size: 0.98rem;
+      }
+      .faq-detail-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+      }
+      .faq-detail-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+  
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{{
+      "@type": "Question",
+      "name": "公司賺的錢分配給股東，會重複課稅嗎？股利所得稅如何申報？",
+      "acceptedAnswer": {{
+        "@type": "Answer",
+        "text": "台灣盈餘分配給個人股東（股利所得）課稅，可從以下兩種方式「擇優」適用：方式 A：合併計稅，享 8.5% 稅額抵減（適合中低所得者）將股利併入個人的綜合所得總額課稅，但按股利總額的 8.5% 計算「可抵減稅額」，直接自綜合所得稅中扣除。每戶每年上限為 80,000 元。對稅率低（如 5%）的股東，往往可退稅。方式 B：分開計稅，單一費率 28%（適合高所得者）股利獨立按 28% 單一費率課稅，分開計算稅額並合併報繳。適合個人邊際稅率高於 30% 的大股東，以避免綜所稅率被拉高。"
+      }}
+    }}]
+  }}
+  </script>
+</head>
+<body>
+
+  <!-- 導覽列 (Navbar) -->
+  <header id="header" class="scrolled">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo" id="nav-logo"><img src="../assets/sample_logo.png" alt="亞信 Logo"><span class="logo-accent">亞信</span><span class="logo-divider"></span><span class="logo-name">鄭詩瀚會計事務所</span></a>
+      
+      <button class="mobile-nav-toggle" aria-label="打開導覽選單" aria-expanded="false" id="mobile-toggle">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul>
+          <li><a href="../index.html#about" class="nav-link">服務對象</a></li>
+          <li><a href="../index.html#services" class="nav-link">服務項目</a></li>
+          <li><a href="../index.html#advantages" class="nav-link">事務所優勢</a></li>
+          <li><a href="../index.html#process" class="nav-link">服務流程</a></li>
+          <li><a href="index.html" class="nav-link active">常見問題</a></li>
+          <li><a href="../index.html#contact" class="nav-link nav-btn-outline">聯絡我們</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 麵包屑 -->
+  <div class="faq-breadcrumbs">
+    <div class="container">
+      <a href="../index.html">首頁</a>
+      <span class="divider">/</span>
+      <a href="index.html">常見問題</a>
+      <span class="divider">/</span>
+      <span class="current-item">公司賺的錢分配給股東，會重複課稅嗎？股利所得稅如何申報？</span>
+    </div>
+  </div>
+
+  <!-- 主內容 -->
+  <main class="faq-detail-container">
+    <article class="faq-detail-card">
+      <span class="faq-detail-category">稅務規劃</span>
+      
+      <div class="faq-q-block">
+        <span class="faq-q-icon">Q</span>
+        <h1>公司賺的錢分配給股東，會重複課稅嗎？股利所得稅如何申報？</h1>
+      </div>
+      
+      <div class="faq-a-block">
+        <span class="faq-a-icon">A</span>
+        <div class="faq-a-content">
+          <p>台灣盈餘分配給個人股東（股利所得）課稅，可從以下兩種方式「擇優」適用：</p><h3>方式 A：合併計稅，享 8.5% 稅額抵減（適合中低所得者）</h3><ul><li>將股利併入個人的綜合所得總額課稅，但按股利總額的 <b>8.5% 計算「可抵減稅額」</b>，直接自綜合所得稅中扣除。每戶每年上限為 <b>80,000 元</b>。對稅率低（如 5%）的股東，往往可退稅。</li></ul><h3>方式 B：分開計稅，單一費率 28%（適合高所得者）</h3><ul><li>股利獨立按 <b>28% 單一費率</b>課稅，分開計算稅額並合併報繳。適合個人邊際稅率高於 30% 的大股東，以避免綜所稅率被拉高。</li></ul>
+        </div>
+      </div>
+      
+      <div class="faq-detail-footer">
+        <p>還有其他稅務或公司設立方面的疑問？</p>
+        <div class="faq-detail-actions">
+          <a href="../index.html#contact" class="btn btn-primary">立即免費諮詢</a>
+          <a href="index.html" class="btn btn-secondary">返回常見問題列表</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- 頁尾 -->
+  <footer class="footer-section">
+    <div class="container copyright-bar" style="border-top: none; padding-bottom: 40px;">
+      <p>&copy; 2026 亞信．鄭詩瀚會計事務所. All Rights Reserved. 版權所有.</p>
+      <p class="footer-note">專業記帳｜稅務申報｜公司設立｜財務顧問</p>
+    </div>
+  </footer>
+
+  <!-- 浮動 LINE 諮詢 -->
+  <div class="floating-actions">
+    <a href="https://line.me/R/ti/p/@yaxin_ac" target="_blank" class="floating-btn btn-line" aria-label="透過 LINE 線上諮詢">
+      <div class="line-tooltip">專人線上諮詢</div>
+      <svg class="line-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28">
+        <path fill="#FFFFFF" d="M21.99 10.45c0-4.39-4.47-7.97-9.97-7.97S2.05 6.06 2.05 10.45c0 3.93 3.55 7.23 8.35 7.87.33.07.77.22.88.5.1.25.07.64.03.9l-.16.98c-.05.3-.23 1.15 1 0l4.31-4.22c3.22-1.39 5.53-3.79 5.53-6.03zM7.91 12.82H6.28a.4.4 0 0 1-.4-.4V8.08a.4.4 0 0 1 .4-.4h.4a.4.4 0 0 1 .4.4v3.54h.83a.4.4 0 0 1 .4.4v.4a.4.4 0 0 1-.4.4zm1.87-.4a.4.4 0 0 1-.4.4h-.4a.4.4 0 0 1-.4-.4V8.08a.4.4 0 0 1 .4-.4h.4a.4.4 0 0 1 .4.4zm4.01 0a.4.4 0 0 1-.3.12h-.87l-2.02-2.73v2.61c0 .22-.18.4-.4.4h-.4a.4.4 0 0 1-.4-.4V8.08c0-.22.18-.4.4-.4h.4c.12 0 .23.05.3.15l1.99 2.69V8.08c0-.22.18-.4.4-.4h.4a.4.4 0 0 1 .4.4v4.34zm3.62-2.31h-1.25v.88h1.25a.4.4 0 0 1 .4.4v.4a.4.4 0 0 1-.4.4h-1.65a.4.4 0 0 1-.4-.4V8.08c0-.22.18-.4.4-.4h1.65a.4.4 0 0 1 .4.4v.4a.4.4 0 0 1-.4.4h-1.25v.85h1.25c.22 0 .4.18.4.4v.4a.4.4 0 0 1-.4.41z"/>
+      </svg>
+    </a>
+  </div>
+
+  <script>
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    mobileToggle.addEventListener('click', () => {
+      const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+      mobileToggle.setAttribute('aria-expanded', !isExpanded);
+      navMenu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
