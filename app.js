@@ -198,6 +198,14 @@ function initContactForm() {
       error: document.getElementById('service-error'),
       validate: (val) => val !== null && val !== ""
     },
+    contactMethod: {
+      input: document.getElementById('contact-method-group'),
+      error: document.getElementById('contact-method-error'),
+      validate: () => {
+        const checked = document.querySelectorAll('input[name="contact_method"]:checked');
+        return checked.length > 0;
+      }
+    },
     message: {
       input: document.getElementById('client-message'),
       error: document.getElementById('message-error'),
@@ -260,12 +268,18 @@ function initContactForm() {
     btnText.textContent = '傳送中...';
     spinner.classList.remove('hidden');
 
+    // 取得選取的希望聯絡方式
+    const selectedMethods = Array.from(document.querySelectorAll('input[name="contact_method"]:checked'))
+      .map(el => el.value)
+      .join(', ');
+
     // 彙整表單資料
     const formData = {
       name: fields.name.input.value.trim(),
       company: document.getElementById('client-company').value.trim(),
       phone: fields.phone.input.value.trim(),
       email: fields.email.input.value.trim(),
+      contactMethod: selectedMethods,
       service: fields.service.input.value,
       message: fields.message.input.value.trim()
     };

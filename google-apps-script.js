@@ -24,6 +24,7 @@ function doPost(e) {
     const company = params.company || '';
     const phone = params.phone || '';
     const email = params.email || '';
+    const contactMethod = params.contactMethod || '';
     const service = params.service || '';
     const message = params.message || '';
 
@@ -37,6 +38,7 @@ function doPost(e) {
       company,
       phone,
       email,
+      contactMethod,
       service,
       message
     ]);
@@ -45,7 +47,7 @@ function doPost(e) {
     const formattedDate = Utilities.formatDate(timestamp, "GMT+8", "yyyy-MM-dd HH:mm:ss");
 
     // 發送通知郵件
-    sendEmailNotification(formattedDate, name, company, phone, email, service, message);
+    sendEmailNotification(formattedDate, name, company, phone, email, contactMethod, service, message);
 
     // 回傳成功 JSON
     return ContentService.createTextOutput(JSON.stringify({
@@ -76,7 +78,7 @@ function doGet(e) {
 /**
  * 發送電子郵件通知
  */
-function sendEmailNotification(date, name, company, phone, email, service, message) {
+function sendEmailNotification(date, name, company, phone, email, contactMethod, service, message) {
   const subject = `【新諮詢通知】亞信會計官網 - 來自 ${name} 的諮詢`;
   
   const htmlBody = `
@@ -95,7 +97,7 @@ function sendEmailNotification(date, name, company, phone, email, service, messa
           </tr>
           <tr>
             <td style="padding: 10px; border-bottom: 1px solid #f0f0f0; font-weight: bold; color: #666666;">聯絡人姓名</td>
-            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0; font-weight: 200;">${name}</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">${name}</td>
           </tr>
           <tr>
             <td style="padding: 10px; border-bottom: 1px solid #f0f0f0; font-weight: bold; color: #666666;">公司 / 職稱</td>
@@ -108,6 +110,10 @@ function sendEmailNotification(date, name, company, phone, email, service, messa
           <tr>
             <td style="padding: 10px; border-bottom: 1px solid #f0f0f0; font-weight: bold; color: #666666;">電子郵件</td>
             <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;"><a href="mailto:${email}" style="color: #F26522; text-decoration: none;">${email}</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0; font-weight: bold; color: #666666;">希望聯絡方式</td>
+            <td style="padding: 10px; border-bottom: 1px solid #f0f0f0; font-weight: bold; color: #F26522;">${contactMethod}</td>
           </tr>
           <tr>
             <td style="padding: 10px; border-bottom: 1px solid #f0f0f0; font-weight: bold; color: #666666;">諮詢項目</td>
