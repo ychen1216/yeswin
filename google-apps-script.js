@@ -52,12 +52,7 @@ function doPost(e) {
       status: 'success',
       message: '資料已成功寫入試算表，並已發送通知郵件。'
     }))
-    .setMimeType(ContentService.MimeType.JSON)
-    .setHeaders({
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type'
-    });
+    .setMimeType(ContentService.MimeType.JSON);
 
   } catch (error) {
     // 回傳錯誤 JSON
@@ -65,23 +60,8 @@ function doPost(e) {
       status: 'error',
       message: error.toString()
     }))
-    .setMimeType(ContentService.MimeType.JSON)
-    .setHeaders({
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type'
-    });
+    .setMimeType(ContentService.MimeType.JSON);
   }
-}
-
-// 支援 OPTIONS 請求（解決跨域 Preflight 請求）
-function doOptions(e) {
-  return ContentService.createTextOutput('')
-    .setHeaders({
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type'
-    });
 }
 
 // 支援 GET 請求作為簡單測試
@@ -90,10 +70,7 @@ function doGet(e) {
     status: 'success',
     message: '亞信會計事務所 API 運行中。請使用 POST 方法提交表單。'
   }))
-  .setMimeType(ContentService.MimeType.JSON)
-  .setHeaders({
-    'Access-Control-Allow-Origin': '*'
-  });
+  .setMimeType(ContentService.MimeType.JSON);
 }
 
 /**
