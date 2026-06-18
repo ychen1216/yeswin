@@ -6,7 +6,7 @@
  */
 
 // 設定收件信箱
-const NOTIFICATION_EMAIL = 'ychen1216@gmail.com';
+const NOTIFICATION_EMAIL = 'a0910069967@gmail.com';
 
 function doPost(e) {
   try {

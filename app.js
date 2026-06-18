@@ -3,7 +3,7 @@
  */
 
 // 若您完成 Google Apps Script 部署，請將下方 URL 替換為您的網頁應用程式部署網址 (Web App URL)
-const GOOGLE_SHEET_URL = '';
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwdk900jeRp7gbFBnNmMwccUGSxm3HV4YNn6Y_n1vXwvo5_YcDL0pOy8QPB6D41Pjqc/exec';
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
